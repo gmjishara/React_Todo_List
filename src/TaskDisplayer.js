@@ -1,16 +1,19 @@
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
+import ListItem from "./components/ListItem";
 
 export default function TaskDisplayer({ data }) {
+  
+  
   return (
-    <div>
-      <Grid container spacing={2} direction={"column"}>
+    <Box mt={6} >
+      <Grid container spacing={1} direction={"column"}>
         {data.map((item) => (
-          <Grid>
-            <h1>{item}</h1>
+          <Grid item>
+            <ListItem>{item}</ListItem>
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Box>
   );
 }

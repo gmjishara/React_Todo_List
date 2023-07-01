@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
-import { Box, Card } from "@mui/material";
+import { Box, Card, CardContent } from "@mui/material";
 import TaskDisplayer from "./TaskDisplayer";
 
 function App() {
@@ -22,10 +22,10 @@ function App() {
       <Card
         sx={{
           minWidth: 350,
-          minHeight: 150,
+          maxHeight: 500,
           borderRadius: "8px",
-          position: "relative",
-          padding:"28px 20px"
+          padding: "28px 20px ",
+          overflowY:"scroll",
         }}
       >
         <SearchBar data={data} setData={setData} />
