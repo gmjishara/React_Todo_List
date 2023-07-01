@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Box, TextField } from "@mui/material";
 import { Button, Grid } from "@mui/material";
 
 export default function SearchBar({ data, setData }) {
   const [value, setValue] = useState("");
+  const [removeValue, setRemoveValue] = useState(null);
 
   const addList = () => {
     setData([...data, value]);
+    setRemoveValue("");
   };
-
-  // const searchStyle = {
-  //   position: "absolute",
-  //   top: "28px",
-  //   left: "20px",
-  // };
 
   return (
     <Box>
@@ -24,8 +20,12 @@ export default function SearchBar({ data, setData }) {
             label="What is the task today?"
             variant="outlined"
             size="small"
-            onChange={(event) => setValue(event.target.value)}
+            onChange={(event) => {
+              setValue(event.target.value);
+              setRemoveValue(event.target.value);
+            }}
             style={{ width: "100%" }}
+            value={removeValue}
           />
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4} xl={3}>

@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
-import { Box, Card, CardContent } from "@mui/material";
+import { Box, Card } from "@mui/material";
 import TaskDisplayer from "./TaskDisplayer";
 
 function App() {
