@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import { Button, Grid } from "@material-ui/core";
+import { TextField } from "@mui/material";
+import {Button, Grid} from "@mui/material";
 
 export default function SearchBar({data,setData}) {
   const [value, setValue] = useState("");
