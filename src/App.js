@@ -26,8 +26,7 @@ function App() {
           maxHeight: 500,
           borderRadius: "8px",
           padding: "28px 20px ",
-          overflowY: "scroll",
-          overflowWrap: "break-word"
+          overflowY:data.length>7? "scroll":"hidden",
         }}
       >
         <SearchBar data={data} setData={setData} />
