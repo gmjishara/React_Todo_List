@@ -37,6 +37,7 @@ function App() {
       >
         <Typography style={headingStyle}>Todo List</Typography>
         <SearchBar data={data} setData={setData} />
+
         <TaskDisplayer data={data} setData={setData} />
       </Card>
     </Box>

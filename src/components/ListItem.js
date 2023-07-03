@@ -4,18 +4,24 @@ import DeleteButton from "../actions/DeleteButton";
 
 export default function ListItem({ children, place, data, setData }) {
   const cardStyle = {
+    maxWidth: 350,
     height: 50,
     backgroundColor: "#8B9DC3",
     display: "flex",
     alignItems: "center",
-    gap: 5,
     position: "relative",
   };
+
   return (
     <div>
       <Card sx={cardStyle}>
-        <CardContent>
-          <Typography>{children}</Typography>
+        <CardContent
+          style={{
+            maxWidth: "275px",
+            overflowWrap:"break-word"
+          }}
+        >
+          {children}
         </CardContent>
 
         <CardActions style={{ position: "absolute", right: "2px" }}>
