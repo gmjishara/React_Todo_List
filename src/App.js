@@ -14,26 +14,15 @@ function App() {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap:'25px',
-    paddingTop:"50px"
-  };
-
-  const headingStyle = {
-    margin: "0 0 30px 120px",
-    fontWeight: 700,
-    fontSize: "25px",
+    gap: "25px",
+    paddingTop: "50px",
   };
 
   return (
-    <Box sx={{backgroundColor: "#3b5998"}}>
+    <Box sx={{ backgroundColor: "#3b5998" }}>
       <Box style={mainStyle}>
-        <CardComponent minWidth={350} maxWidth={350} maxHeight="auto">
-          <Typography style={headingStyle}>Todo List</Typography>
-          <SearchBar data={data} setData={setData} />
-        </CardComponent>
-        <CardComponent minWidth={350} maxWidth={350} maxHeight="auto">
-          <TaskDisplayer data={data} setData={setData} />
-        </CardComponent>
+        <SearchBar data={data} setData={setData} />
+        <TaskDisplayer data={data} setData={setData} />
       </Box>
     </Box>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Box, TextField } from "@mui/material";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
+import CardComponent from "./Common/Components/CardComponent/CardComponent";
 
 export default function SearchBar({ data, setData }) {
   const [value, setValue] = useState("");
@@ -11,8 +12,15 @@ export default function SearchBar({ data, setData }) {
     setRemoveValue("");
   };
 
+  const headingStyle = {
+    margin: "0 0 30px 120px",
+    fontWeight: 700,
+    fontSize: "25px",
+  };
+
   return (
-    <Box>
+    <CardComponent minWidth={350} maxWidth={350} maxHeight="auto">
+      <Typography style={headingStyle}>Todo List</Typography>
       <Grid container spacing={2} direction="row">
         <Grid item xs={12} sm={8} md={8} lg={8} xl={9}>
           <TextField
@@ -39,6 +47,6 @@ export default function SearchBar({ data, setData }) {
           </Button>
         </Grid>
       </Grid>
-    </Box>
+    </CardComponent>
   );
 }
