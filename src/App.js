@@ -3,6 +3,7 @@ import { useState } from "react";
 import SearchBar from "./SearchBar";
 import { Box, Card, Typography } from "@mui/material";
 import TaskDisplayer from "./TaskDisplayer";
+import CardComponent from "./Common/Components/CardComponent/CardComponent";
 
 function App() {
   const [data, setData] = useState([]);
@@ -13,7 +14,8 @@ function App() {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "#3b5998",
+    gap:'25px',
+    paddingTop:"50px"
   };
 
   const headingStyle = {
@@ -23,23 +25,16 @@ function App() {
   };
 
   return (
-    <Box style={mainStyle}>
-      <Card
-        sx={{
-          minWidth: 350,
-          maxWidth: 350,
-          maxHeight: 500,
-          borderRadius: "8px",
-          marginTop: "50px",
-          padding: data.length > 0 ? "28px 20px" : "28px 20px 0 20px",
-          overflowY: data.length > 7 ? "scroll" : "hidden",
-        }}
-      >
-        <Typography style={headingStyle}>Todo List</Typography>
-        <SearchBar data={data} setData={setData} />
-
-        <TaskDisplayer data={data} setData={setData} />
-      </Card>
+    <Box sx={{backgroundColor: "#3b5998"}}>
+      <Box style={mainStyle}>
+        <CardComponent minWidth={350} maxWidth={350} maxHeight="auto">
+          <Typography style={headingStyle}>Todo List</Typography>
+          <SearchBar data={data} setData={setData} />
+        </CardComponent>
+        <CardComponent minWidth={350} maxWidth={350} maxHeight="auto">
+          <TaskDisplayer data={data} setData={setData} />
+        </CardComponent>
+      </Box>
     </Box>
   );
 }
