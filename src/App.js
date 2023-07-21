@@ -7,6 +7,7 @@ import CardComponent from "./Common/Components/CardComponent/CardComponent";
 
 function App() {
   const [data, setData] = useState([]);
+  const [pop,setPop] = useState(false);
 
   const mainStyle = {
     wdith: "100%",
@@ -21,8 +22,8 @@ function App() {
   return (
     <Box sx={{ backgroundColor: "#3b5998" }}>
       <Box style={mainStyle}>
-        <SearchBar data={data} setData={setData} />
-        <TaskDisplayer data={data} setData={setData} />
+        <SearchBar data={data} setData={setData} setPop={setPop} />
+        <TaskDisplayer data={data} setData={setData}  />
       </Box>
     </Box>
   );

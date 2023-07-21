@@ -3,11 +3,14 @@ import { Box, TextField } from "@mui/material";
 import { Button, Grid, Typography } from "@mui/material";
 import CardComponent from "./Common/Components/CardComponent/CardComponent";
 
-export default function SearchBar({ data, setData }) {
+export default function SearchBar({ data, setData, setPop }) {
   const [value, setValue] = useState("");
   const [removeValue, setRemoveValue] = useState(null);
 
   const addList = () => {
+    if(data.length ===0) {
+      setPop(true)
+    }
     setData([...data, value]);
     setRemoveValue("");
   };

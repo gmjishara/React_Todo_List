@@ -25,7 +25,7 @@ export default function ListItem({ children, place, data, setData }) {
         </CardContent>
 
         <CardActions style={{ position: "absolute", right: "2px" }}>
-          <DeleteButton place={place} data={data} setData={setData} />
+          <DeleteButton place={place} data={data} setData={setData}  />
         </CardActions>
       </Card>
     </div>
