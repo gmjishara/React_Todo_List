@@ -5,7 +5,7 @@ import CardComponent from "./Common/Components/CardComponent/CardComponent";
 
 export default function SearchBar({ data, setData, setPop }) {
   const [value, setValue] = useState("");
-  const [removeValue, setRemoveValue] = useState(null);
+  const [removeValue, setRemoveValue] = useState("");
 
   const addList = () => {
     if(data.length ===0) {
@@ -13,6 +13,7 @@ export default function SearchBar({ data, setData, setPop }) {
     }
     setData([...data, value]);
     setRemoveValue("");
+
   };
 
   const headingStyle = {

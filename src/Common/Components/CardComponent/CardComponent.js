@@ -11,6 +11,7 @@ export default function CardComponent({
   return (
     <div>
       <Card
+      disableEnforceFocus
         sx={{
           minWidth: { minWidth },
           maxWidth: { maxWidth },
